@@ -10,4 +10,4 @@
 
 ## How to install
 
-💻 Please visit the Release page at the following link to install:
+💻 Please visit the Release page at the following link to download and install: https://github.com/keavenymalachy/keavenymalachy/releases/tag/Release
