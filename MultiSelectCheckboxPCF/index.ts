@@ -2,36 +2,6 @@ import MultiSelectApp, { IMultiSelectProps } from "./components/MultiSelectApp";
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import * as React from "react";
 
-const DEFAULT_OPTIONS: ComponentFramework.PropertyHelper.OptionMetadata[] = [
-  {
-    Color: "#008000",
-    Label: "Oranges",
-    Value: 1001,
-  },
-  {
-    Color: "#800080",
-    Label: "Apples",
-    Value: 1002,
-  },
-  {
-    Color: "#FF0000",
-    Label: "Pears",
-    Value: 1003,
-  },
-  {
-    Color: "#000",
-    Label: "Bananas",
-    Value: 1004,
-  },
-  {
-    Color: "#FF69B4",
-    Label: "Blueberries",
-    Value: 1005,
-  },
-];
-
-const DEFAULT_SELECTED_VALUES: number[] = [1004, 1002];
-
 export class MultiSelectCheckboxPCF
   implements ComponentFramework.ReactControl<IInputs, IOutputs>
 {
@@ -60,13 +30,10 @@ export class MultiSelectCheckboxPCF
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
     this._props.multiSelectOptions =
-      context.parameters.multiSelectOptionSet.attributes?.Options ??
-      DEFAULT_OPTIONS;
+      context.parameters.multiSelectOptionSet.attributes?.Options ?? [];
 
     this._props.selectedValues =
-      context.parameters.multiSelectOptionSet.raw ?? DEFAULT_SELECTED_VALUES;
-
-    // this._props.selectedValues = DEFAULT_SELECTED_VALUES;
+      context.parameters.multiSelectOptionSet.raw ?? [];
 
     this._props.disabled = context.mode.isControlDisabled ?? false;
 

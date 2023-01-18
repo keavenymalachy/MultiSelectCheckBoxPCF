@@ -1,6 +1,7 @@
 import {
   Dropdown,
   FontIcon,
+  IDropdownOption,
   IDropdownProps,
   IDropdownStyles,
   ISelectableOption,
@@ -45,7 +46,7 @@ const FilterDropdown = ({
           />
         </Stack.Item>
         <Stack.Item>
-          <span>Show All</span>
+          <span>All</span>
         </Stack.Item>
       </Stack>
     );
@@ -73,6 +74,26 @@ const FilterDropdown = ({
     );
   };
 
+  const onRenderTitle = (options?: IDropdownOption[]): JSX.Element => {
+    return (
+      <Stack
+        horizontal
+        verticalAlign="center"
+        horizontalAlign="space-around"
+      >
+        <Stack.Item align="center">
+          <FontIcon
+            iconName={options![0].data.iconName}
+            className={classNames.deepSkyBlue}
+          />
+        </Stack.Item>
+        <Stack.Item align="center">
+          <span>{options![0].text}</span>
+        </Stack.Item>
+      </Stack>
+    );
+  };
+
   const onChange = (
     e: React.FormEvent<HTMLDivElement>,
     item?: ISelectableOption
@@ -88,10 +109,10 @@ const FilterDropdown = ({
 
   return (
     <Dropdown
-      placeholder="Select All"
       onRenderPlaceholder={onRenderPlaceholder}
       options={options}
       onRenderOption={onRenderOption}
+      onRenderTitle={onRenderTitle}
       styles={dropdownStyles}
       onChange={onChange}
       disabled={disabled}

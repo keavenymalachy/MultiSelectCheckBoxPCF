@@ -4,21 +4,21 @@ import * as React from "react";
 export const FilteringOptions: IDropdownOption[] = [
   {
     key: "checked",
-    text: "Show Checked",
+    text: "Checked",
     data: {
       iconName: "CheckboxCompositeReversed",
     },
   },
   {
     key: "unchecked",
-    text: "Show Unchecked",
+    text: "Unchecked",
     data: {
       iconName: "Checkbox",
     },
   },
   {
     key: "all",
-    text: "Show All",
+    text: "All",
     data: {
       iconName: "CheckListText",
     },
