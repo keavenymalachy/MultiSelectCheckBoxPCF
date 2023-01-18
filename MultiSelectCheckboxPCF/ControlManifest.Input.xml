@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="mkeaveny" constructor="MultiSelectCheckboxPCF" version="0.0.1" display-name-key="MultiSelectCheckboxPCF" description-key="MultiSelectCheckboxPCF description" control-type="virtual" >
+
+    <external-service-usage enabled="false">
+
+    </external-service-usage>
+    
+    <property name="multiSelectOptionSet" display-name-key="MultiSelectOptionSet" description-key="MultiSelectOptionSet" of-type="MultiSelectOptionSet" usage="bound" required="true" />
+   
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/MultiSelectApp.css" order="1"/>
+      <platform-library name="React" version="16.8.6" />
+      <platform-library name="Fluent" version="8.29.0" />
+   
+    </resources>
+
+  </control>
+</manifest>
